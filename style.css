@@ -33,6 +33,14 @@ body{
  margin: 10px 40px;
  border-radius: 50%;
 }
+.chooseme
+{
+    padding:10px;
+    margin: 20px 90px 0 90px;
+    background-color:blanchedalmond;
+    border-radius: 5px;
+    color:grey;
+}
 
 .moonlight
 {
@@ -69,10 +77,27 @@ body{
  border-style: solid;
 }
 
-.chooseme
+
+
+@media(max-width:500px)
 {
-    padding:10px;
-    margin: 20px 90px 0 90px;
-    background-color:blanchedalmond;
-    border-radius: 5px;
+ .card{
+     max-width:300px;
+     margin: 20% auto;
+ }   
+ .color-text
+ {
+     margin:10px 50px;
+     padding:10px 20px;
+ }
+ .color
+ {
+     margin:10px 15px;
+ }
+ .chooseme{
+     padding:20px;
+     margin:20px 20px 0 20px;
+     text-align:center;
+     
+ }
 }
