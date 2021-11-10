@@ -1,52 +1,94 @@
-const btn1 = document.querySelector(".moonlight");
-const btn2 = document.querySelector(".agressive");
-const btn3 = document.querySelector(".darkme");
-const btn4 = document.querySelector(".brightme");
-const btn5 = document.querySelector(".lifetree");
-const btn6 = document.querySelector(".normal");
+const btn1 = document.querySelector(".btn1");
+const btn2 = document.querySelector(".btn2");
+const btn3 = document.querySelector(".btn3");
+const btn4 = document.querySelector(".btn4");
+const btn5 = document.querySelector(".btn5");
+const btn6 = document.querySelector(".btn6");
 const col = document.querySelector(".color-text");
+list_class = [];
 btn1.addEventListener("click",function(e)
 {
     e.preventDefault();
-    // document.body.style.backfaceVisibility = auto;
-    document.querySelector('body').classList.toggle('moonlight');
+    // if(document.body.classList === null)
+    // {
+    // document.querySelector('body').classList.toggle('moonlight');
+    // col.textContent= "Moonlight";
+    // }
+    // else{
+        
+    //     document.querySelector('body').classList.toggle('moonlight');
+    //     col.textContent= "Moonlight";
+    // }
+    // document.body.classList.add('moonlight');
+    if(document.body.classList !== null)
+    {
+    a=list_class.pop();
+    document.body.classList.remove(a);
+    }
+    document.body.classList.add('moonlight');
     col.textContent= "Moonlight";
-    
+    list_class.push('moonlight')
+
 });
 
-btn2.addEventListener("click",function(e)
+btn2.addEventListener("click",function()
 {
-    e.preventDefault();
+    if(document.body.classList !== null)
+    {
+    a=list_class.pop();
+    document.body.classList.remove(a);
+    }
     document.querySelector('body').classList.toggle('agressive');
     col.textContent= "Aggresive";
+    list_class.push('agressive');
 });
 
-btn3.addEventListener("click",function(e)
+btn3.addEventListener("click",function()
 {
-    e.preventDefault();
-    document.querySelector('body').classList.toggle('darkme');
+    if(document.body.classList !== null)
+    {
+    a=list_class.pop();
+    document.body.classList.remove(a);
+    }
+    document.querySelector('body').classList.add('darkme');
     col.textContent= "Darkme";
+    list_class.push('darkme');
 });
 
-btn4.addEventListener("click",function(e)
+btn4.addEventListener("click",function()
 {
-    e.preventDefault();
+    if(document.body.classList !== null)
+    {
+    a=list_class.pop();
+    document.body.classList.remove(a);
+    }
     document.querySelector('body').classList.toggle('brightme');
     col.textContent= "Brightme";
+    list_class.push('brightme');
 });
 
-btn5.addEventListener("click",function(e)
+btn5.addEventListener("click",function()
 {
-    e.preventDefault();
+    if(document.body.classList !== null)
+    {
+    a=list_class.pop();
+    document.body.classList.remove(a);
+    }
     document.querySelector('body').classList.toggle('lifetree');
     col.textContent= "Lifetree";
+    list_class.push('lifetree');
 });
 
-btn6.addEventListener("click",function(e)
+btn6.addEventListener("click",function()
 {
-    e.preventDefault();
+    if(document.body.classList !== null)
+    {
+    a=list_class.pop();
+    document.body.classList.remove(a);
+    }
     document.querySelector('body').classList.toggle('normal');
     col.textContent= "Normal";
+    list_class.push('normal');
 });
 
 const hex = [0,1,2,3,4,5,6,7,8,9,"a","b","c","d","e","f"];
@@ -60,11 +102,21 @@ random_btn.addEventListener("click",(e) =>{
    {
        code += hex[randomnumber()];
    }
-   col.textContent = code;
-   document.body.style.backgroundImage = 'none';
+
+   
+   if(document.body.classList !== null)
+    {
+    a=list_class.pop();
+    document.body.classList.remove(a);
+    }
+    else if(document.body.style !==  null)
+    {
+       document.body.style.remove(backgroundColor);
+    }
+    col.textContent = code;
    document.body.style.backgroundColor= code;
 
-}
+ }
 );
 
 function randomnumber()
